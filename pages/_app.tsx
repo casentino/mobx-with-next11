@@ -1,7 +1,19 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import '../styles/globals.css';
+import type { AppContext, AppProps } from 'next/app';
+import { RootStoreProvider } from './stores/RootStoreProvider';
+import { RootStore } from './stores/RootStore';
+import { NextPage } from 'next';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+interface MyAppProps extends AppProps {
+	hydrationData: RootStore;
 }
-export default MyApp
+
+function MyApp({ Component, pageProps, hydrationData }: MyAppProps) {
+	return (
+		<RootStoreProvider hydrationData={hydrationData}>
+			<Component {...pageProps} />
+		</RootStoreProvider>
+	);
+}
+
+export default MyApp;
