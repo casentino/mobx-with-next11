@@ -1,0 +1,125 @@
+<mxfile host="65bd71144e">
+    <diagram id="Qo07A9ysZiWx9zQaVZO9" name="페이지-1">
+        <mxGraphModel dx="2865" dy="754" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="8" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-570" y="150" width="280" height="370" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="CLIENT REQUEST&lt;br&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="-570" y="150" width="120" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="-560" y="182" width="260" height="38" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="NextPage Component" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="-560" y="182" width="130" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="-560" y="240" width="260" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="SSR PAGE" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="-560" y="240" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="66" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.692;entryY=-0.017;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="58" target="65">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="렌더링된 후 부터 CSR&lt;br&gt;1. Props -&amp;gt; Store hydrate()&lt;br&gt;2. CSR&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;glass=0;labelBackgroundColor=none;fillColor=#2a2a2a;align=left;verticalAlign=top;spacingLeft=3;" vertex="1" parent="1">
+                    <mxGeometry x="-490" y="280" width="150" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="" style="group" vertex="1" connectable="0" parent="1">
+                    <mxGeometry x="-150" y="40" width="690" height="500" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="59">
+                    <mxGeometry width="690" height="500" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="NEXT-SERVER&lt;br&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="59">
+                    <mxGeometry width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="" style="group" vertex="1" connectable="0" parent="59">
+                    <mxGeometry x="100" y="20" width="290" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;verticalAlign=top;glass=0;perimeterSpacing=0;fillColor=none;" vertex="1" parent="48">
+                    <mxGeometry width="290" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="48">
+                    <mxGeometry x="10" y="15" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="getServerSideProps" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="48">
+                    <mxGeometry x="10" y="15" width="120" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="48">
+                    <mxGeometry x="10" y="85" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="getStaticProps" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="48">
+                    <mxGeometry x="10" y="85" width="90" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="OR" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="48">
+                    <mxGeometry x="130" y="75" width="30" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="48">
+                    <mxGeometry x="160" y="55" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="getInitialProps" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="48">
+                    <mxGeometry x="160" y="55" width="90" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="59" source="49" target="51">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="HYDRATION DATA&lt;br&gt;&lt;br&gt;return {&lt;br&gt;&amp;nbsp; props: {&lt;br&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;     ...&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;span style=&quot;white-space: pre&quot;&gt;     // &lt;b&gt;Serialize Data (fetching data, state)&lt;/b&gt;&lt;br&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&amp;nbsp; }&lt;br&gt;}" style="rounded=0;whiteSpace=wrap;html=1;glass=0;labelBackgroundColor=none;verticalAlign=top;align=left;horizontal=1;spacingTop=10;spacingLeft=10;" vertex="1" parent="59">
+                    <mxGeometry x="390" y="280" width="260" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="Data Fetching / Return State" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="59" source="37" target="49">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="&lt;br&gt;&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;glass=0;labelBackgroundColor=none;fillColor=#2a2a2a;verticalAlign=top;" vertex="1" parent="59">
+                    <mxGeometry x="50" y="220" width="260" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="PAGE RENDER" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="59">
+                    <mxGeometry x="50" y="220" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="Props {&lt;br&gt;&amp;nbsp; hydrationData&lt;br&gt;}" style="rounded=0;whiteSpace=wrap;html=1;glass=0;labelBackgroundColor=none;fillColor=#2a2a2a;verticalAlign=middle;align=left;spacingLeft=4;" vertex="1" parent="59">
+                    <mxGeometry x="195" y="265" width="100" height="75" as="geometry"/>
+                </mxCell>
+                <mxCell id="61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="59" source="54" target="56">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="RootStore(SERVER)&lt;br&gt;&lt;br&gt;hydrate()&lt;br&gt;hydration&lt;span style=&quot;white-space: pre&quot;&gt;&#9;&lt;/span&gt;Data 가 루트스토어로 주입됨" style="rounded=0;whiteSpace=wrap;html=1;glass=0;labelBackgroundColor=none;fillColor=#2a2a2a;align=left;verticalAlign=top;" vertex="1" parent="59">
+                    <mxGeometry x="80" y="390" width="140" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="59" source="53" target="54">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="Component&lt;br&gt;&lt;br&gt;props -&amp;gt; redner&lt;br&gt;store -&amp;gt; render" style="rounded=0;whiteSpace=wrap;html=1;glass=0;labelBackgroundColor=none;fillColor=#2a2a2a;align=left;verticalAlign=top;" vertex="1" parent="59">
+                    <mxGeometry x="60" y="260" width="110" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="59" source="53" target="56">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="15" target="37">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.004;exitY=0.568;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="51" target="34">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="-170" y="270" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="62" value="Rendered PAGE" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="33">
+                    <mxGeometry x="0.205" y="-2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="65" value="RootStore(CLIENT)" style="rounded=0;whiteSpace=wrap;html=1;glass=0;labelBackgroundColor=none;fillColor=#2a2a2a;align=left;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="-500" y="414" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="68" value="" style="rounded=0;whiteSpace=wrap;html=1;glass=0;labelBackgroundColor=none;fillColor=#2a2a2a;align=left;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="-270" y="90" width="20" height="470" as="geometry"/>
+                </mxCell>
+                <mxCell id="69" value="Serialized" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="-295" y="60" width="70" height="20" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
