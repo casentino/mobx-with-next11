@@ -1,9 +1,8 @@
 // import { HydrationStore, RootStoreMembers } from '../stores/RootStore';
 import { observable, ObservableMap, ObservableSet, toJS } from 'mobx';
-import { HydrateStoreData, HydrationStore, RootStoreMembers } from '../stores/HydrationType';
-import { RootStore } from '../stores/RootStore';
+import { HydrationStore, IHydrationStore } from '../stores/HydrationType';
 
-export function serializationStore<Store extends RootStoreMembers>(store: Store): HydrationStore<Store> {
+export function serializationStore<Store extends IHydrationStore>(store: Store): HydrationStore<Store> {
 	function parser(o: Record<string, unknown>) {
 		if (o instanceof Function) {
 			return o;
@@ -40,10 +39,10 @@ export function serializationStore<Store extends RootStoreMembers>(store: Store)
 	return serializeStore;
 }
 
-type HydratatoinStoreKeys<Store extends RootStoreMembers> = keyof HydrationStore<Store>;
-type EntriesType<Store extends RootStoreMembers> = [HydratatoinStoreKeys<Store>, Store[HydratatoinStoreKeys<Store>]];
+type HydratatoinStoreKeys<Store extends IHydrationStore> = keyof HydrationStore<Store>;
+type EntriesType<Store extends IHydrationStore> = [HydratatoinStoreKeys<Store>, Store[HydratatoinStoreKeys<Store>]];
 
-export function deserializationStore<Store extends RootStoreMembers>(
+export function deserializationStore<Store extends IHydrationStore>(
 	serailizedStore: HydrationStore<Store>,
 	store: Store
 ): HydrationStore<Store> {
