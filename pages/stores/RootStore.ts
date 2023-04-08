@@ -6,15 +6,15 @@ import TodoStore from './TodoStore';
 enableStaticRendering(getIsServer());
 
 export class RootStore {
-  todoStore: TodoStore;
+	todoStore: TodoStore;
+	constructor() {
+		this.todoStore = new TodoStore();
+	}
+	hydrate(data?: HydrateStoreData) {
+		if (!data) return this;
 
-  constructor() {
-    this.todoStore = new TodoStore();
-  }
-  hydrate(data?: HydrateStoreData) {
-    if (!data) return this;
-    if (data.todoStore) {
-      this.todoStore.hydrate(data.todoStore);
-    }
-  }
+		if (data.todoStore) {
+			this.todoStore.hydrate(data.todoStore);
+		}
+	}
 }
