@@ -24,6 +24,7 @@ describe('hydration util tets', () => {
 		const serializedStore = serializationStore(store);
 		Object.entries(serializedStore).forEach(([key, value]) => {
 			expect(isObservable(value)).toBeFalsy();
+			expect(value instanceof Function).toBeFalsy();
 		});
 	});
 	it('deserialize test', () => {
