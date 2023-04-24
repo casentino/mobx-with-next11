@@ -2,6 +2,10 @@
 
 const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
 
+const nextConfig = {
+	reactStrictMode: true,
+	webpack5: false,
+};
 function settingEnv(phase) {
   const isDev = phase === PHASE_DEVELOPMENT_SERVER;
   const env = {
@@ -12,9 +16,8 @@ function settingEnv(phase) {
     })()
   }
   return {
-    env,
-		reactStrictMode: true,
-		webpack5: false,
+		env,
+		...nextConfig,
 	};
 }
 
