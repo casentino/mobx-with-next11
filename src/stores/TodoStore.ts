@@ -1,5 +1,5 @@
 import { makeAutoObservable } from 'mobx';
-import Todo from '../models/Todo';
+import Todo from '@models/Todo';
 import { HydrationStore, IHydrationStore } from './HydrationType';
 
 export default class TodoStore implements IHydrationStore {

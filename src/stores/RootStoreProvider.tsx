@@ -1,9 +1,8 @@
 import React from 'react';
-import { getIsServer } from '../utils/common';
+import { getIsServer } from '@utils/common';
 import { HydrateStoreData } from './HydrationType';
 import { RootStore } from './RootStore';
-import { NextComponentType, NextPageContext } from 'next';
-import App from 'next/app';
+import { NextComponentType } from 'next';
 
 let rootStore: RootStore;
 
