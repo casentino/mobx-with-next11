@@ -1,9 +1,7 @@
 import '../styles/globals.css';
-import type { AppContext, AppProps } from 'next/app';
-import { RootStoreProvider } from './stores/RootStoreProvider';
-import { RootStore } from './stores/RootStore';
-import { NextComponentType, NextPage } from 'next';
-import { HydrateStoreData } from './stores/HydrationType';
+import type { AppProps } from 'next/app';
+import { RootStoreProvider } from '@stores/RootStoreProvider';
+import { HydrateStoreData } from '@stores/HydrationType';
 
 interface PageProps {
 	hydrationData?: HydrateStoreData;
