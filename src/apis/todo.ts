@@ -1,4 +1,4 @@
-import Todo from 'models/Todo';
+import Todo from '@models/Todo';
 import { axiosInstance } from './axios.instance';
 import { CreateTodoRequest, TodosResponse, TodoResponse } from './todoAPI';
 

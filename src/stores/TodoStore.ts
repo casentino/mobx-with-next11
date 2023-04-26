@@ -1,6 +1,7 @@
 import { makeAutoObservable } from 'mobx';
-import Todo from '../models/Todo';
+import Todo from '@models/Todo';
 import { HydrationStore, IHydrationStore } from './HydrationType';
+import { deserializationStore } from '@utils/hydrationUtil';
 
 export default class TodoStore implements IHydrationStore {
 	private _todoList: Todo[] = [];
@@ -22,9 +23,9 @@ export default class TodoStore implements IHydrationStore {
 
 	hydrate(hydrateData?: HydrationStore<TodoStore>) {
 		if (!hydrateData) return;
-
-		if (hydrateData.todoList) {
-			this._todoList = hydrateData.todoList;
+		const deserializedStore = deserializationStore<TodoStore>(this, hydrateData);
+		if (deserializedStore.todoList) {
+			this._todoList = deserializedStore.todoList;
 		}
 	}
 }

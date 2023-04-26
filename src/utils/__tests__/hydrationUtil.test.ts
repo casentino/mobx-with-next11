@@ -29,7 +29,7 @@ describe('hydration util tets', () => {
 	});
 	it('deserialize test', () => {
 		const serializedStore = serializationStore(store);
-		const deserializeedStore = deserializationStore(serializedStore, store);
+		const deserializeedStore = deserializationStore(store, serializedStore);
 		Object.entries(deserializeedStore).forEach(([key, value]) => {
 			const originValue = store[key as keyof MockStore];
 			if (isObservableMap(originValue)) {
