@@ -2,7 +2,6 @@ import React from 'react';
 import { getIsServer } from '@utils/common';
 import { HydrateStoreData } from './HydrationType';
 import { RootStore } from './RootStore';
-import { NextComponentType } from 'next';
 
 let rootStore: RootStore;
 
@@ -37,7 +36,6 @@ function initializeRootStore(hydrationData?: HydrateStoreData) {
 
 interface RootStoreProviderProps {
 	hydrationData?: HydrateStoreData;
-	children?: React.ReactNode | NextComponentType;
 }
 
 export function RootStoreProvider({ children, hydrationData }: React.PropsWithChildren<RootStoreProviderProps>) {

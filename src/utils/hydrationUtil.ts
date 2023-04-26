@@ -43,8 +43,8 @@ type HydratatoinStoreKeys<Store extends IHydrationStore> = keyof HydrationStore<
 type EntriesType<Store extends IHydrationStore> = [HydratatoinStoreKeys<Store>, Store[HydratatoinStoreKeys<Store>]];
 
 export function deserializationStore<Store extends IHydrationStore>(
-	serailizedStore: HydrationStore<Store>,
-	store: Store
+	store: Store,
+	serailizedStore: HydrationStore<Store>
 ): HydrationStore<Store> {
 	const entreis = Object.entries<HydrationStore<Store>[HydratatoinStoreKeys<Store>]>(serailizedStore) as Array<
 		EntriesType<Store>
@@ -62,6 +62,12 @@ export function deserializationStore<Store extends IHydrationStore>(
 				return {
 					...prev,
 					[key]: observable.map(value),
+				};
+			}
+			if (store[key] instanceof Array) {
+				return {
+					...prev,
+					[key]: observable.array(value),
 				};
 			}
 		}
