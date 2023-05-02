@@ -38,6 +38,7 @@ export default class UserStore implements IHydrationStore {
 	hydrate(hydrateData?: HydrationStore<UserStore>) {
 		if (!hydrateData) return;
 		const deserialized = deserializationStore<UserStore>(this, hydrateData);
+
 		if (deserialized.profile) {
 			this._profile = deserialized.profile;
 		}
