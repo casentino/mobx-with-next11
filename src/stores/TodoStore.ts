@@ -23,7 +23,9 @@ export default class TodoStore implements IHydrationStore {
 
 	hydrate(hydrateData?: HydrationStore<TodoStore>) {
 		if (!hydrateData) return;
+
 		const deserializedStore = deserializationStore<TodoStore>(this, hydrateData);
+
 		if (deserializedStore.todoList) {
 			this._todoList = deserializedStore.todoList;
 		}

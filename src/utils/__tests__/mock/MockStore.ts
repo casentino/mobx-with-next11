@@ -1,10 +1,11 @@
 import { ObservableMap, ObservableSet, makeAutoObservable, observable } from 'mobx';
 import Todo from '../../../models/Todo';
 import { HydrationStore, IHydrationStore } from '../../../stores/HydrationType';
+import { deserializationStore } from '../../hydrationUtil';
 
 export default class MockStore implements IHydrationStore {
 	private _todoMap: ObservableMap<number, Todo> = observable.map<number, Todo>();
-	private _todoIdSet: ObservableSet<number> = observable.set<number>();
+	private _todoIdSet?: ObservableSet<number>;
 	private _list: Todo[] = [];
 	private _todo?: Todo;
 	private _currentTodoName?: string;
@@ -16,9 +17,15 @@ export default class MockStore implements IHydrationStore {
 
 	setTodoMap(todo: Todo) {
 		const { id } = todo;
+		if (!this._todoMap) {
+			this._todoMap = observable.map<number, Todo>();
+		}
 		this._todoMap.set(id, todo);
 	}
 	setTodoIdSet(id: number) {
+		if (!this._todoIdSet) {
+			this._todoIdSet = observable.set<number>();
+		}
 		this._todoIdSet.add(id);
 	}
 	addTodo(todo: Todo) {
@@ -33,7 +40,7 @@ export default class MockStore implements IHydrationStore {
 	setCurrentTodoId(id: number) {
 		this._currentTodoId = id;
 	}
-	setCurrentTodoCehcked(checked: boolean) {
+	setCurrentTodoChecked(checked: boolean) {
 		this._currentTodoChecked = checked;
 	}
 
@@ -58,5 +65,15 @@ export default class MockStore implements IHydrationStore {
 	get currentTodoChecked() {
 		return this._currentTodoChecked;
 	}
-	hydrate(data?: HydrationStore<MockStore>): void {}
+	hydrate(data?: HydrationStore<MockStore>): void {
+		if (!data) return;
+
+		const des = deserializationStore<MockStore>(this, data);
+		if (des.todo) {
+			this._todo = des.todo;
+		}
+		if (des.todoMap) {
+			this._todoMap = des.todoMap;
+		}
+	}
 }

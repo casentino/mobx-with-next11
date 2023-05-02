@@ -2,23 +2,35 @@ import { ObservableMap, ObservableSet, isObservable, isObservableMap, isObservab
 import { deserializationStore, serializationStore } from '../hydrationUtil';
 import MockStore from './mock/MockStore';
 import todos from './mock/todos';
-import { observable } from 'mobx';
 import { toJS } from 'mobx';
 
 describe('hydration util tets', () => {
 	let store: MockStore;
+	let jsonStore: Record<string, any> = {};
 	beforeEach(() => {
 		store = new MockStore();
 		const [todo1, ...others] = todos;
-		store.setCurrentTodoCehcked(todo1.checked);
+		store.setCurrentTodoChecked(todo1.checked);
 		store.setCurrentTodoName(todo1.title);
 		store.setCurrentTodoId(todo1.id);
 		store.setTodo(todo1);
+		jsonStore.currentTodoName = todo1.title;
+		jsonStore.currentTodoChecked = todo1.checked;
+		jsonStore.currentTodoId = todo1.id;
+		jsonStore.todo = todo1;
+		jsonStore.list = [];
+		jsonStore.todoIdSet = new Set();
+		jsonStore.todoMap = new Map();
 		others.forEach((todo) => {
 			store.setTodoMap(todo);
+			jsonStore.todoMap.set(todo.id, todo);
 			store.addTodo(todo);
+			jsonStore.list.push(todo);
 			store.setTodoIdSet(todo.id);
+			jsonStore.todoIdSet.add(todo.id);
 		});
+		jsonStore.todoMap = Array.from(jsonStore.todoMap.entries());
+		jsonStore.todoIdSet = Array.from(jsonStore.todoIdSet.values());
 	});
 	it('serialize test', () => {
 		const serializedStore = serializationStore(store);
@@ -26,6 +38,8 @@ describe('hydration util tets', () => {
 			expect(isObservable(value)).toBeFalsy();
 			expect(value instanceof Function).toBeFalsy();
 		});
+		expect(serializedStore).toEqual(jsonStore);
+		expect(serializedStore).toStrictEqual(jsonStore);
 	});
 	it('deserialize test', () => {
 		const serializedStore = serializationStore(store);
@@ -39,5 +53,20 @@ describe('hydration util tets', () => {
 			}
 			expect(toJS(value)).toEqual(toJS(originValue));
 		});
+	});
+	it('deserialize undefined map set test', () => {
+		store = new MockStore();
+		const [todo1, ...others] = todos;
+		store.setCurrentTodoChecked(todo1.checked);
+		store.setCurrentTodoName(todo1.title);
+		store.setCurrentTodoId(todo1.id);
+		store.setTodo(todo1);
+
+		others.forEach((todo) => {
+			store.setTodoMap(todo);
+			store.addTodo(todo);
+			store.setTodoIdSet(todo.id);
+		});
+		const serializedStore = serializationStore(store);
 	});
 });
