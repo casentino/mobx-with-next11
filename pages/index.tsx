@@ -1,6 +1,7 @@
 import React from 'react';
-import { useRootStore } from '@stores/RootStoreProvider';
 import { observer } from 'mobx-react-lite';
+import Image from 'next/image';
+import { useRootStore } from '@stores/RootStoreProvider';
 import { useAuthCookie } from '@hooks/useAuthCookie';
 import { COOKIE_SESSION_ID } from '@config/config';
 import TextField from 'src/components/common/Input';
@@ -23,7 +24,7 @@ function Home(props: any) {
 		<div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
 			<TextField />
 			<div className="sm:mx-auto sm:w-full sm:max-w-sm">
-				<img
+				<Image
 					className="mx-auto h-10 w-auto"
 					src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
 					alt="Your Company"
