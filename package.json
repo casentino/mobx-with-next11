@@ -6,23 +6,43 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
+		"test": "jest --watch",
 		"lint": "next lint"
 	},
 	"dependencies": {
+		"@headlessui/react": "^1.7.14",
+		"@heroicons/react": "^2.0.17",
 		"axios": "^1.3.4",
+		"cookies-next": "^2.1.1",
 		"mobx": "^6.3.2",
 		"mobx-react": "^6.1.8",
 		"mobx-react-lite": "^3.1.6",
 		"next": "11.1.0",
 		"react": "17.0.2",
+		"react-cookie": "^4.1.1",
 		"react-dom": "17.0.2",
-		"styled-components": "^5.3.9"
+		"styled-components": "^5.3.9",
+		"tailwindcss": "^3.3.1"
 	},
 	"devDependencies": {
+		"@testing-library/jest-dom": "^5.16.5",
+		"@testing-library/react": "^14.0.0",
+		"@testing-library/user-event": "^14.4.3",
+		"@types/jest": "^29.5.0",
 		"@types/react": "17.0.19",
+		"@types/react-dom": "^17.0.11",
+		"@types/testing-library__jest-dom": "^5.14.5",
+		"autoprefixer": "^10.4.14",
+		"cypress": "^12.9.0",
 		"eslint": "7.32.0",
 		"eslint-config-next": "11.1.0",
+		"jest": "^29.5.0",
+		"jest-environment-jsdom": "^29.5.0",
+		"postcss": "^8.4.23",
+		"ts-jest": "^29.1.0",
 		"typescript": "4.4.2"
 	},
-	"packageManager": "yarn@1.22.19"
+	"resolutions": {
+		"@types/react": "17.0.2"
+	}
 }
