@@ -19,15 +19,4 @@ function MyApp({ Component, pageProps }: MyAppProps) {
 		</RootStoreProvider>
 	);
 }
-MyApp.getInitialProps = async ({ Component, ctx }: AppContext) => {
-	let pageProps = {};
-	if (Component.getInitialProps) {
-		pageProps = await Component.getInitialProps(ctx);
-	}
-	return {
-		pageProps: {
-			...pageProps,
-		},
-	};
-};
 export default MyApp;
